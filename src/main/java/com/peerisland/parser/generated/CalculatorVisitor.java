@@ -1,5 +1,3 @@
-package com.peerisland.parser.generated;
-
 // Generated from Calculator.g4 by ANTLR 4.9.3
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -38,6 +36,13 @@ public interface CalculatorVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitSecondOrderOps(CalculatorParser.SecondOrderOpsContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code UnaryOps}
+	 * labeled alternative in {@link CalculatorParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitUnaryOps(CalculatorParser.UnaryOpsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CalculatorParser#first_op}.
 	 * @param ctx the parse tree

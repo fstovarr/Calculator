@@ -7,6 +7,7 @@ line: (WHITESPACE* expression WHITESPACE* SEPARATOR*)+;
 
 expression:
 	NUMBER																			# Number
+	| operator=second_op WHITESPACE number=expression								# UnaryOps
 	| first=expression WHITESPACE operator=first_op WHITESPACE second=expression	# FirstOrderOps
 	| first=expression WHITESPACE operator=second_op WHITESPACE second=expression	# SecondOrderOps;
 

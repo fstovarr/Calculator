@@ -1,5 +1,3 @@
-package com.peerisland.parser.generated;
-
 // Generated from Calculator.g4 by ANTLR 4.9.3
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
