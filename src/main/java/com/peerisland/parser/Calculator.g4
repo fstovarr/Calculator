@@ -6,9 +6,9 @@ grammar Calculator;
 line: (WHITESPACE* expression WHITESPACE* SEPARATOR*)+;
 
 expression:
-	NUMBER
-	| expression WHITESPACE first_op WHITESPACE expression
-	| expression WHITESPACE second_op WHITESPACE expression;
+	NUMBER																			# Number
+	| first=expression WHITESPACE operator=first_op WHITESPACE second=expression	# FirstOrderOps
+	| first=expression WHITESPACE operator=second_op WHITESPACE second=expression	# SecondOrderOps;
 
 first_op: INTO | DIVIDE;
 second_op: PLUS | MINUS;
