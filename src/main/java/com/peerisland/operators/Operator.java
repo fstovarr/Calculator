@@ -1,5 +1,13 @@
 package com.peerisland.operators;
 
-public interface Operator {
-    public Double calculate();
+public abstract class Operator implements OperatorBehavior {
+    private final String identifier;
+
+    public Operator(String identifier) {
+        this.identifier = identifier;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
 }

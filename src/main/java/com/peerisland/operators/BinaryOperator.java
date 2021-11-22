@@ -1,10 +1,11 @@
 package com.peerisland.operators;
 
-public abstract class BinaryOperator implements Operator {
+public abstract class BinaryOperator extends Operator {
     private final Double first;
     private final Double second;
 
-    public BinaryOperator(Double first, Double second) {
+    public BinaryOperator(String identifier, Double first, Double second) {
+        super(identifier);
         this.first = first;
         this.second = second;
     }

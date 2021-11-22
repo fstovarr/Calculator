@@ -1,9 +1,10 @@
 package com.peerisland.operators;
 
-public abstract class UnaryOperator implements Operator {
+public abstract class UnaryOperator extends Operator {
     private final Double number;
 
-    public UnaryOperator(Double number) {
+    public UnaryOperator(String identifier, Double number) {
+        super(identifier);
         this.number = number;
     }
 
