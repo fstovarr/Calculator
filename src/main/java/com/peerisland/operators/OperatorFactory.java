@@ -1,7 +1,8 @@
 package com.peerisland.operators;
 
 public class OperatorFactory {
-    public static OperatorBehavior createOperator(String operator, Double number) {
+    public static Operator createOperator(String operator, String str) {
+        Double number = Double.parseDouble(str);
         switch (operator) {
         case Plus.IDENTIFIER:
             return new Plus(number);
@@ -12,7 +13,9 @@ public class OperatorFactory {
         }
     }
 
-    public static OperatorBehavior createOperator(String operator, Double first, Double second) {
+    public static Operator createOperator(String operator, String firstStr, String secondStr) {
+        Double first = Double.parseDouble(firstStr);
+        Double second = Double.parseDouble(secondStr);
         switch (operator) {
         case Addition.IDENTIFIER:
             return new Addition(first, second);

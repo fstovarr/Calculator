@@ -3,10 +3,13 @@ grammar Calculator;
  * Parser Rules
  */
 
-line: (WHITESPACE* expression WHITESPACE* SEPARATOR*)+;
+start: line+;
+
+line: (WHITESPACE* expression WHITESPACE* SEPARATOR*);
 
 expression:
 	NUMBER																			# Number
+    | PARENTHESIS_L expression PARENTHESIS_R										# GroupingOp																				
 	| operator=second_op WHITESPACE number=expression								# UnaryOps
 	| first=expression WHITESPACE operator=first_op WHITESPACE second=expression	# FirstOrderOps
 	| first=expression WHITESPACE operator=second_op WHITESPACE second=expression	# SecondOrderOps;
@@ -45,3 +48,7 @@ WHITESPACE: [ \t\r\n]+;
 NUMBER: DIGIT+;
 
 SEPARATOR: ';';
+
+PARENTHESIS_R: ')';
+
+PARENTHESIS_L: '(';
