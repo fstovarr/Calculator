@@ -1,6 +1,14 @@
 package com.peerisland.operators;
 
 public class OperatorFactory {
+
+    /**
+     * Returns the operator with the given identifier for unary operators
+     * 
+     * @param operator the identifier of the operator
+     * @param str      the number to be used in the operation
+     * @return an instance of the requested operator
+     */
     public static Operator createOperator(String operator, String str) {
         Double number = Double.parseDouble(str);
         switch (operator) {
@@ -12,6 +20,15 @@ public class OperatorFactory {
             throw new IllegalArgumentException("Operator " + operator + " is not supported");
         }
     }
+
+    /**
+     * Returns the operator with the given identifier for binary operators
+     * 
+     * @param operator  the identifier of the operator
+     * @param firstStr  the first number to be used in the operation
+     * @param secondStr the second number to be used in the operation
+     * @return an instance of the requested operator
+     */
 
     public static Operator createOperator(String operator, String firstStr, String secondStr) {
         Double first = Double.parseDouble(firstStr);

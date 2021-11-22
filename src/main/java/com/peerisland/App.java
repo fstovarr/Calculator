@@ -13,6 +13,16 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.TokenStream;
 
 public class App {
+    /**
+     * Application entry point.
+     * 
+     * This method keeps listening for user input through the console, and when
+     * triggered EOF (Ctrl + D in linux), it evaluates the input and shows the
+     * result.
+     * 
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
         InputStreamReader isr = new InputStreamReader(System.in, "UTF-8");
 
